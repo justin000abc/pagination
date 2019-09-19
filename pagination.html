@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="https://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="pagination.js"></script>
+<style>
+body {
+	margin: 0;
+}
+* {
+	box-sizing: border-box;
+}
+.container {
+	width: 100%;
+	max-width: 996px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: hidden;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.center {
+	text-align: center;
+}
+.item_wrap {
+	padding-top: 20px;
+	margin-left: -15px;
+	margin-right: -15px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.item {
+	width: 25%;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+.inq_btn {
+	display: inline-block;
+	padding: 5px 10px;
+	background-color: #ccc;
+	cursor: pointer;
+	color: #333;
+	text-decoration: none;
+}
+.mt20 {
+	margin-top: 20px;
+}
+a {
+	display: inline-block;
+	text-decoration: none;
+}
+.pro-img {
+	padding-bottom: 100%;
+	background-color: #999;
+}
+.pagination_wrap a {
+	color: #333;
+}
+.pagination_wrap .prev, .pagination_wrap .next {
+	position: relative;
+}
+.pagination_wrap .prev:before, .pagination_wrap .next:before {
+	content: "";
+	background-color: $black;
+	width: 100%;
+	height: 1px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.pagination_wrap .prev.disable, .pagination_wrap .next.disable {
+	display: none;
+}
+.pagination_wrap .prev.disable:before, .pagination_wrap .next.disable:before {
+	background-color: #ccc;
+}
+.pagination_wrap .prev {
+	margin-right: 30px;
+}
+.pagination_wrap .next {
+	margin-left: 30px;
+}
+.pagination_wrap, .pagination, .pagination .option, .pagination .option a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.pagination .title {
+	display: none;
+}
+.pagination select {
+	display: none;
+}
+.pagination .option a {
+	width: 36px;
+	height: 36px;
+	color: #666;
+}
+.pagination .option a.active {
+	background-color: #666;
+	color: #fff;
+}
+</style>
+</head>
+<body>
+<div class="container pro_list_wrap">
+	<div class="item_wrap">
+		<div class="item">
+			<div class="pro-img"></div>
+			<h3 class="mt20">1</h3>
+		</div>
+		<div class="item">
+			<div class="pro-img"></div>
+			<h3 class="mt20">2</h3>
+		</div>
+		<div class="item">
+			<div class="pro-img"></div>
+			<h3 class="mt20">3</h3>
+		</div>
+		<div class="item">
+			<div class="pro-img"></div>
+			<h3 class="mt20">4</h3>
+		</div>
+		<div class="item">
+			<div class="pro-img"></div>
+			<h3 class="mt20">5</h3>
+		</div>
+		<div class="item">
+			<div class="pro-img"></div>
+			<h3 class="mt20">6</h3>
+		</div>
+		<div class="item">
+			<div class="pro-img"></div>
+			<h3 class="mt20">7</h3>
+		</div>
+		<div class="item">
+			<div class="pro-img"></div>
+			<h3 class="mt20">8</h3>
+		</div>
+		<div class="item">
+			<div class="pro-img"></div>
+			<h3 class="mt20">9</h3>
+		</div>
+		<div class="item">
+			<div class="pro-img"></div>
+			<h3 class="mt20">10</h3>
+		</div>
+		<div class="item">
+			<div class="pro-img"></div>
+			<h3 class="mt20">11</h3>
+		</div>
+		<div class="item">
+			<div class="pro-img"></div>
+			<h3 class="mt20">12</h3>
+		</div>
+		<div class="item">
+			<div class="pro-img"></div>
+			<h3 class="mt20">13</h3>
+		</div>
+		<div class="item">
+			<div class="pro-img"></div>
+			<h3 class="mt20">14</h3>
+		</div>
+		<div class="item">
+			<div class="pro-img"></div>
+			<h3 class="mt20">15</h3>
+		</div>
+		<div class="item">
+			<div class="pro-img"></div>
+			<h3 class="mt20">16</h3>
+		</div>
+		<div class="item">
+			<div class="pro-img"></div>
+			<h3 class="mt20">17</h3>
+		</div>
+		<div class="item">
+			<div class="pro-img"></div>
+			<h3 class="mt20">18</h3>
+		</div>
+		<div class="item">
+			<div class="pro-img"></div>
+			<h3 class="mt20">19</h3>
+		</div>
+		<div class="item">
+			<div class="pro-img"></div>
+			<h3 class="mt20">20</h3>
+		</div>
+	</div>
+</div>
+<script>
+var hash = location.hash.substr(1)||1;
+new Pagination({
+	o: $('.item_wrap'),
+	page: hash,
+	pages: 8,
+	lazy: false,
+	callback: {
+		page_hash: function(i){
+			location.hash = '#'+ (i+1);
+		}
+	}
+});
+</script>
+</body>
+</html>
